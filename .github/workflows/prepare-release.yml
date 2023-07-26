@@ -20,8 +20,6 @@ on:
       wc-version:
         description: 'WooCommerce tested up to'
 
-permissions: write-all
-
 jobs:
   PrepareRelease:
     name: Prepare Release
@@ -38,3 +36,9 @@ jobs:
           wp-version: ${{ github.event.inputs.wp-version }}
           wc-version: ${{ github.event.inputs.wc-version }}
           main-branch: 'trunk'
+
+permissions:
+  id-token: write
+  contents: read
+  issues: write
+  pull-requests: write
